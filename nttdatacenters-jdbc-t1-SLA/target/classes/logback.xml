@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration packagingData="true" debug="true">
+	<appender name="info" class="ch.qos.logback.core.FileAppender">
+		<file>./logs/info.log</file>
+		<encoder>
+			<pattern>  %level - [%thread] - %msg%n  </pattern>
+		</encoder>		
+	</appender>		
+	
+	<appender name="error" class="ch.qos.logback.core.FileAppender">
+		<file>./logs/info.log</file>
+		<encoder>
+			<pattern>  %level - [%date{HH:mm:ss}] - [%thread] - %msg%n </pattern>
+		</encoder>
+	</appender>
+	
+	<root level="OFF"/>		
+	
+	<logger name="logInfo" level="DEBUG">
+		<appender-ref ref="info"/>
+	</logger>
+	
+	<logger name="logError" level="ERROR">
+		<appender-ref ref="error"/>
+	</logger>
+	
+</configuration>
